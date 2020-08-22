@@ -1,0 +1,5 @@
+Listen {{ httpdport }}
+
+<VirtualHost {{ ansible_default_ipv4.address }}:{{ httpdport }}>
+DocumentRoot  {{ dcroot }}
+</VirtualHost>

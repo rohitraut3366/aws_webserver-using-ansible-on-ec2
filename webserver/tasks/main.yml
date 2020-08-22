@@ -1,0 +1,18 @@
+---
+# tasks file for webserver
+#
+- name: install httpd package
+  package:
+      name: "httpd"
+      state: present 
+
+- name: starting web service
+  service:
+        name: "httpd"
+        state: started
+
+- name: copy web page from url
+  get_url:
+        dest: "/var/www/html"
+        url: "https://raw.githubusercontent.com/rohitraut3366/mulicloud/master/index.html"
+
